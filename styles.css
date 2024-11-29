@@ -21,10 +21,7 @@ body {
   color: var(--grayish-blue);
   font-weight: 400;
 }
-.service-attributes {
-  font-size: 2rem;
-  font-weight: 200;
-}
+
 .bold {
   font-weight: 600;
   color: var(--very-dark-blue);
@@ -39,10 +36,12 @@ header {
   padding-top: 50px;
 }
 main {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 30rem;
   gap: 3rem;
-  padding: 0 50px;
+  padding: 50px 50px;
 }
 .card {
   position: relative;
@@ -65,29 +64,63 @@ main {
 }
 .card:nth-child(1) {
   border-top: 3px solid var(--cyan);
-  grid-row: 2 / 4;
-  align-self: center;
 }
 
 .card:nth-child(2) {
   border-top: 3px solid var(--red);
-  grid-row: 2 / 3;
 }
 
 .card:nth-child(3) {
   border-top: 3px solid var(--orange);
-  grid-row: 3 / 4;
 }
 
 .card:nth-child(4) {
   border-top: 3px solid var(--blue);
-  grid-row: 2 / 4;
-  align-self: center;
 }
 .card img {
   justify-self: end;
 }
+@media (min-width: 1000px) {
+  .service-attributes {
+    font-size: 2rem;
+    font-weight: 200;
+  }
+  .bold {
+    font-weight: 600;
+    color: var(--very-dark-blue);
+  }
+  .service-description {
+    margin-top: 1rem;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: unset;
+    padding-top: 0;
+  }
+  .card:nth-child(1) {
+    border-top: 3px solid var(--cyan);
+    grid-row: 2 / 4;
+    align-self: center;
+  }
 
+  .card:nth-child(2) {
+    border-top: 3px solid var(--red);
+    grid-row: 2 / 3;
+  }
+
+  .card:nth-child(3) {
+    border-top: 3px solid var(--orange);
+    grid-row: 3 / 4;
+  }
+
+  .card:nth-child(4) {
+    border-top: 3px solid var(--blue);
+    grid-row: 2 / 4;
+    align-self: center;
+  }
+}
 .attribution {
   font-size: 11px;
   text-align: center;
